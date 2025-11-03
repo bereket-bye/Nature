@@ -1,11 +1,14 @@
-document.getElementById('greetBtn').addEventListener('click', function() {
-    const messages = [
-        "Hello from Ato Tibebesilesie!",
-        "Hi! Sifen Dula says hello!",
-        "Keep learning IT, the sky's the limit!",
-        "Coding is fun! 🚀"
-    ];
-
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    document.getElementById('greetingMessage').textContent = randomMessage;
+document.addEventListener("DOMContentLoaded", () => {
+  const greetBtn = document.getElementById('greetBtn');
+  if (greetBtn) {
+    greetBtn.addEventListener('click', () => {
+      const messages = [
+        "Hi there! Sifen says: Keep going and dreaming big!",
+        "Remember — creativity + curiosity = innovation!",
+        "You’re doing amazing things, keep it up!"
+      ];
+      const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById('greetingMessage').textContent = randomMessage;
+    });
+  }
 });
