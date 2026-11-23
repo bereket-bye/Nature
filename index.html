@@ -1,63 +1,817 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> How to know <strong>Sifen Dula </strong></title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Sifen Dula</h1>
-      <p class="subtitle">Creative | Coder | Dreame |......r</p>
-      <a href="#about" class="btn">Discover More</a>
-    </div>
-  </header>
 
+  <title>Sifen Dula | A Little World of Her Own</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* GENERAL STYLING */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --pink: #e98ba9;
+      --purple: #8b72b5;
+      --dark: #292333;
+      --light: #fff9fc;
+      --muted: #786e7d;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 249, 252, 0.88);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--purple);
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-menu a:hover {
+      color: var(--pink);
+    }
+
+    /* HERO SECTION */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      background:
+        linear-gradient(rgba(25, 18, 35, 0.45),
+        rgba(25, 18, 35, 0.65)),
+        url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1800&q=85')
+        center/cover no-repeat;
+      padding: 100px 20px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero-small {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+      color: #f8d8e7;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      margin-bottom: 15px;
+      text-shadow: 0 5px 30px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #f8eaf2;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 40px;
+      background: linear-gradient(120deg, #e98ba9, #a58bc9);
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .scroll-note {
+      position: absolute;
+      bottom: 25px;
+      font-size: 0.8rem;
+      opacity: 0.8;
+      letter-spacing: 2px;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 100px 9%;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-heading span {
+      color: var(--pink);
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-top: 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: white;
+    }
+
+    .about-content {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      line-height: 2;
+      font-size: 1.05rem;
+      color: #625969;
+    }
+
+    .name-meaning {
+      margin: 35px auto 0;
+      max-width: 550px;
+      padding: 25px;
+      border-radius: 18px;
+      background: #fff3f8;
+      border-left: 4px solid var(--pink);
+    }
+
+    .name-meaning h3 {
+      color: var(--purple);
+      margin-bottom: 10px;
+    }
+
+    /* GALLERY */
+
+    .gallery {
+      background: linear-gradient(135deg, #fdf3f8, #f0edfa);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+    }
+
+    .gallery-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(70, 45, 90, 0.08);
+      transition: 0.35s;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(70, 45, 90, 0.15);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      transition: 0.5s;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-info {
+      padding: 22px;
+    }
+
+    .gallery-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: var(--purple);
+    }
+
+    .gallery-info p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .gallery-tag {
+      display: inline-block;
+      margin-top: 15px;
+      font-size: 0.75rem;
+      color: var(--pink);
+      font-weight: bold;
+    }
+
+    /* FRIENDSHIP SECTION */
+
+    .friendship {
+      background: white;
+      text-align: center;
+    }
+
+    .friendship-content {
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .friendship-content p {
+      line-height: 2;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .friendship-quote {
+      margin-top: 30px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--purple);
+      font-style: italic;
+    }
+
+    /* FUN FACTS */
+
+    .fun-section {
+      background: linear-gradient(130deg, #f9e9f2, #eee9fa);
+      text-align: center;
+    }
+
+    .fun-box {
+      max-width: 650px;
+      margin: auto;
+      padding: 45px 25px;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 10px 35px rgba(70,45,90,0.08);
+    }
+
+    .fun-box p {
+      color: var(--muted);
+      margin: 20px 0;
+      line-height: 1.8;
+    }
+
+    .fun-box button {
+      border: none;
+      padding: 14px 30px;
+      border-radius: 30px;
+      background: linear-gradient(120deg, #e98ba9, #a58bc9);
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .fun-box button:hover {
+      transform: scale(1.06);
+    }
+
+    #greetingMessage {
+      min-height: 55px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--purple);
+    }
+
+    /* FAITH SECTION */
+
+    .faith {
+      background: #292333;
+      color: white;
+      text-align: center;
+      padding: 75px 20px;
+    }
+
+    .faith-cross {
+      font-size: 2.3rem;
+      color: #e8c9a0;
+      margin-bottom: 20px;
+    }
+
+    .faith h2 {
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    .faith p {
+      color: #ded4e5;
+      line-height: 1.9;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .faith small {
+      display: block;
+      margin-top: 22px;
+      color: #e8c9a0;
+      letter-spacing: 1px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #201b28;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer p {
+      font-size: 0.85rem;
+      color: #c9bdcf;
+      line-height: 2;
+    }
+
+    footer .footer-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: white;
+    }
+
+    /* ANIMATIONS */
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE RESPONSIVENESS */
+
+    @media(max-width: 650px) {
+      nav {
+        padding: 15px 5%;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+      }
+
+      .nav-menu {
+        gap: 12px;
+      }
+
+      .nav-menu a {
+        font-size: 0.75rem;
+      }
+
+      section {
+        padding: 75px 6%;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media(prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
   <nav>
+    <div class="logo">Sifen ✧</div>
+
     <ul class="nav-menu">
-      <li><a href="#about" class="active">About</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#fun">Fun Facts</a></li>
+      <li><a href="#friendship">Friendship</a></li>
+      <li><a href="#fun">Fun</a></li>
     </ul>
   </nav>
 
-  <main>
-    <section id="about" class="about">
-      <h2>🌟 About Sifen</h2>
-      <p>
-        Sifen Dula is a passionate IT student, best delegate of a debate held on 3/11/25, a judge for the club MUN,.......  
-        Her name carries a beautiful meaning — <strong>Sifen</strong> means “for you,” and <strong>Dula</strong> means “to battle.”  
-        Together, her name means <em>“I’ll battle for you.”</em> ⚔️  
-      </p>
-      <p>
-        She dreams of .....
-      </p>
-    </section>
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <div class="hero-content">
 
-    <section id="gallery" class="gallery">
-      <h2>📸 Sifen’s Moments</h2>
-      <div class="gallery-grid">
-        <img src="https://ik.imagekit.io/agz3vjxyd/IMG_2702.jpeg?updatedAt=1762160909780" alt="Sifen Dula">
-        <img src="https://ik.imagekit.io/agz3vjxyd/IMG_2702.jpeg?updatedAt=1762160909780" alt="Coding">
-        <img src="https://ik.imagekit.io/agz3vjxyd/IMG_2702.jpeg?updatedAt=1762160909780" alt="Sifen Smile">
-        <img src="https://ik.imagekit.io/agz3vjxyd/IMG_2702.jpeg?updatedAt=1762160909780" alt="Study Time">
+      <div class="hero-small">A little world of her own</div>
+
+      <h1>Sifen Dula</h1>
+
+      <p>
+        Creative. Curious. Ambitious. A dreamer with a story
+        still being written.
+      </p>
+
+      <a href="#about" class="btn">Discover Her World ↓</a>
+
+    </div>
+
+    <div class="scroll-note">SCROLL TO EXPLORE</div>
+  </header>
+
+  <main>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+      <div class="section-heading reveal">
+        <span>Getting to know her</span>
+        <h2>🌷 About Sifen</h2>
+        <p>Every person has a story. Here is a little piece of hers.</p>
+      </div>
+
+      <div class="about-content reveal">
+
+        <p>
+          Sifen Dula is a passionate IT student, a creative thinker,
+          and someone who is always looking for new things to learn.
+
+          She was named Best Delegate in a debate held on 3/11/25
+          and also serves as a judge for the MUN club.
+
+          But there is much more to her than achievements.
+          She has dreams, interests, experiences, and a personality
+          that makes her who she is.
+        </p>
+
+        <div class="name-meaning">
+          <h3>The meaning behind her name ✨</h3>
+
+          <p>
+            <strong>Sifen</strong> means "for you,"
+            and <strong>Dula</strong> means "to battle."
+          </p>
+
+          <p>
+            Together, her name carries the beautiful meaning:
+            <em>"I'll battle for you."</em> ⚔️
+          </p>
+        </div>
+
+        <p style="margin-top: 35px;">
+          She dreams of ... [Not yet added by Makari]
+        </p>
+
       </div>
     </section>
 
-    <section id="fun" class="fun-section">
-      <h2>🎮 Fun Zone</h2>
-      <p>Click below for a surprise message from Sifen!</p>
-      <button id="greetBtn">✨ Click Me!</button>
-      <p id="greetingMessage"></p>
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+
+      <div class="section-heading reveal">
+        <span>Memories and moments</span>
+        <h2>📸 Her Little Gallery</h2>
+        <p>A collection of moments, memories, and stories.</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-card reveal">
+          <img
+            src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=800"
+            alt="Beautiful morning scenery">
+
+          <div class="gallery-info">
+            <h3>A Beautiful Beginning</h3>
+            <p>Not yet added by Makari. A little description will go here.</p>
+            <span class="gallery-tag">✧ A memory</span>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal">
+          <img
+            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800"
+            alt="Portrait photograph">
+
+          <div class="gallery-info">
+            <h3>A Special Moment</h3>
+            <p>Not yet added by Makari. The real story is coming soon.</p>
+            <span class="gallery-tag">♡ Special</span>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal">
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800"
+            alt="Computer and coding setup">
+
+          <div class="gallery-info">
+            <h3>Creative Mind</h3>
+            <p>Not yet added by Makari. Something about her interests.</p>
+            <span class="gallery-tag">💻 Creativity</span>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal">
+          <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800"
+            alt="Beautiful landscape">
+
+          <div class="gallery-info">
+            <h3>Somewhere Beautiful</h3>
+            <p>Not yet added by Makari. A story worth remembering.</p>
+            <span class="gallery-tag">🌿 Adventures</span>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal">
+          <img
+            src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=800"
+            alt="Friends spending time together">
+
+          <div class="gallery-info">
+            <h3>Good Company</h3>
+            <p>Not yet added by Makari. Every friendship has its moments.</p>
+            <span class="gallery-tag">♡ Friendship</span>
+          </div>
+        </div>
+
+        <div class="gallery-card reveal">
+          <img
+            src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800"
+            alt="Sunrise over a landscape">
+
+          <div class="gallery-info">
+            <h3>New Horizons</h3>
+            <p>Not yet added by Makari. More memories to come.</p>
+            <span class="gallery-tag">✧ Dreams</span>
+          </div>
+        </div>
+
+      </div>
     </section>
 
+    <!-- FRIENDSHIP -->
+    <section class="friendship" id="friendship">
+
+      <div class="section-heading reveal">
+        <span>A little appreciation</span>
+        <h2>♡ A Note About Friendship</h2>
+      </div>
+
+      <div class="friendship-content reveal">
+
+        <p>
+          Some people make ordinary days memorable.
+          Some friendships bring laughter, inspiration,
+          and unforgettable experiences.
+
+          This little corner is dedicated to celebrating
+          the person behind all the photographs and stories.
+        </p>
+
+        <div class="friendship-quote">
+          "The best stories are still being written."
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FUN ZONE -->
+    <section class="fun-section" id="fun">
+
+      <div class="section-heading reveal">
+        <span>Something unexpected</span>
+        <h2>🎮 The Fun Zone</h2>
+        <p>A little surprise every time you click.</p>
+      </div>
+
+      <div class="fun-box reveal">
+
+        <h3>Need a little encouragement?</h3>
+
+        <p>
+          Click the button and see what Sifen has to say!
+        </p>
+
+        <button id="greetBtn">✨ Click Me!</button>
+
+        <p id="greetingMessage" aria-live="polite">
+          Your surprise message will appear here.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- SUBTLE ORTHODOX TOUCH -->
+    <section class="faith">
+
+      <div class="faith-cross">✝</div>
+
+      <h2>Grace Upon Grace</h2>
+
+      <p>
+        May God guide your steps, strengthen your faith,
+        bless your dreams, and fill your journey with wisdom
+        and purpose.
+      </p>
+
+      <small>Glory be to God, now and always.</small>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
   <footer>
-    <p>Sifen Dula</p>
+
+    <p class="footer-name">Sifen Dula ✧</p>
+
+    <p>
+      A little website, a lot of memories.
+    </p>
+
+    <p style="margin-top: 10px;">
+      Made with ♡ by Makari
+    </p>
+
+    <p>© 2026 | All little moments reserved.</p>
+
   </footer>
 
-  <script src="script.js"></script>
+  <!-- JAVASCRIPT -->
+  <script>
+
+    // RANDOM GREETING MESSAGES
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const greetBtn = document.getElementById("greetBtn");
+      const greetingMessage = document.getElementById("greetingMessage");
+
+      const messages = [
+        "Hi Sifen! Keep going and dreaming big! ✨",
+        "Creativity + curiosity = innovation. Never stop exploring!",
+        "You are capable of achieving wonderful things!",
+        "May every new day bring you something beautiful. 🌷",
+        "Keep being yourself. That is your superpower!",
+        "A little reminder: your dreams are worth pursuing.",
+        "God's timing is always beautiful. Keep trusting Him. ✝",
+        "The world has not seen the best of you yet!"
+      ];
+
+      greetBtn.addEventListener("click", () => {
+
+        const randomIndex = Math.floor(
+          Math.random() * messages.length
+        );
+
+        greetingMessage.textContent = messages[randomIndex];
+
+      });
+
+    });
+
+
+    // SCROLL REVEAL ANIMATIONS
+
+    const observer = new IntersectionObserver((entries) => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("visible");
+
+          observer.unobserve(entry.target);
+
+        }
+
+      });
+
+    }, {
+      threshold: 0.12
+    });
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      observer.observe(element);
+    });
+
+
+    // ACTIVE NAVIGATION LINK
+
+    const sections = document.querySelectorAll("main section, header.hero");
+    const navLinks = document.querySelectorAll(".nav-menu a");
+
+    window.addEventListener("scroll", () => {
+
+      let current = "home";
+
+      sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+
+      });
+
+      navLinks.forEach(link => {
+
+        link.style.color =
+          link.getAttribute("href") === "#" + current
+          ? "#e98ba9"
+          : "";
+
+      });
+
+    });
+
+  </script>
+
 </body>
 </html>
